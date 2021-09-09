@@ -1,6 +1,6 @@
-export default function initAttractionModel(sequelize, DataTypes) {
+export default function initCategoryModel(sequelize, DataTypes) {
   return sequelize.define(
-    'attraction',
+    'category',
     {
       id: {
         allowNull: false,
@@ -11,14 +11,7 @@ export default function initAttractionModel(sequelize, DataTypes) {
       name: {
         type: DataTypes.STRING,
       },
-      trip_id: {
-        type: DataTypes.INTEGER,
-        // This links the trip_id column to the id column in the trips table
-        references: {
-          model: 'trips',
-          key: 'id',
-        },
-      },
+      // created_at and updated_at are required
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
@@ -26,13 +19,6 @@ export default function initAttractionModel(sequelize, DataTypes) {
       updatedAt: {
         allowNull: false,
         type: DataTypes.DATE,
-      },
-      category_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'categories',
-          key: 'id',
-        },
       },
     },
     {

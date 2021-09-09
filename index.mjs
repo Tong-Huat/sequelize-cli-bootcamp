@@ -44,3 +44,14 @@ if (action === 'trip') {
     .then((tripAttractions) => console.log(tripAttractions.map((tripAttraction) => tripAttraction.name)))
     .catch((error) => console.log(error));
 }
+
+if (action === 'add-category') {
+  db.Category.create({
+    name: process.argv[3],
+  })
+    .then((category) => {
+      console.log('category created');
+      console.log(category);
+    })
+    .catch((error) => console.log(error));
+}
