@@ -20,8 +20,8 @@ db.Category = initCategoryModel(sequelize, Sequelize.DataTypes);
 db.Attraction.belongsTo(db.Trip);
 db.Trip.hasMany(db.Attraction);
 
-db.Category.hasMany(db.Attraction);
 db.Attraction.belongsTo(db.Category);
+db.Category.hasMany(db.Attraction);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
