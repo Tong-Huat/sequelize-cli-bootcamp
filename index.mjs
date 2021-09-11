@@ -138,6 +138,7 @@ if (action === 'category-attractions') {
       },
     });
   }).then((trips) => {
+    console.log(trips);
     console.log(trips.map((trip) => trip.name));
   })
     .catch((err) => console.error(err));
